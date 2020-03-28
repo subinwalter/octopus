@@ -207,6 +207,7 @@ module Octopus
 
       @slaves_list = shards.keys.map(&:to_s).sort
       @slaves_list.delete('master')
+      @slaves_list.delete('extended')
       @slaves_load_balancer = Octopus.load_balancer.new(@slaves_list)
     end
 
